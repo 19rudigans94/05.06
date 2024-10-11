@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+
+    <header>
+        <%- include('./components/header.ejs') %>
+    </header>
+    <%- include('./components/sidebar.ejs') %>
+
+
+        <main class="postContainer">
+            <% posts.forEach(({name, username, email, phone, _id})=> { %>
+                <div>
+                    <h2>
+                        <P>Имя: <%= name %>
+                        </P>
+
+                    </h2>
+                    <p>
+                        Тоже имя: <br>
+                        <%= username %>
+                    </p>
+                    <p>
+                        Почта: <%= email %>
+                    </p>
+                    <p>
+                        ТЕЛ: <%= phone %>
+                    </p>
+                    <button data-id="<%= _id %>" class="deletePost">
+                        <H5>Удалить</H5>
+                    </button>
+                    <button data-id="<%= _id %>" class="viewPost">
+                        <H5>Изменить</H5>
+                    </button>
+                </div>
+                <% }) %>
+        </main>
+
+        <script src="delete-post.js"></script>
+</body>
+
+</html>

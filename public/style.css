@@ -1,0 +1,92 @@
+/* Обнуление стилей */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Тело документа */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Стили для заголовка */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Стили для заголовка h1 */
+header h1 {
+    margin: 0;
+}
+
+/* Стили для боковой панели */
+aside {
+    background-color: #ddd;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    padding: 20px;
+    z-index: 998;
+    display: none;
+}
+
+/* Стили для основного содержимого */
+main {
+    width: calc(100% - 20%);
+    padding: 20px;
+    margin-left: 20%;
+}
+
+/* Стили для контейнеров постов */
+main>div {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Стили для заголовков постов */
+main>div h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Стили для абзацев постов */
+main>div p {
+    margin: 5px 0;
+}
+
+/* Стили для первого абзаца в посте */
+main>div p:first-of-type {
+    font-weight: bold;
+}
+
+/* Медиа запросы для адаптивного макета */
+@media (max-width: 768px) {
+
+    aside,
+    main {
+        width: 100%;
+    }
+}
